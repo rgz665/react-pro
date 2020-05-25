@@ -1,0 +1,59 @@
+$r-color:#7A45E5;
+$r-size:30px;
+
+// 变量
+.body{
+    color: $r-color;
+    font-size: $r-size;
+}
+// 嵌套
+.body{
+    .in{
+        color: red;
+    }
+}
+// 引入(不会发出http请求，而是合并，
+// CSS原生的@import会通过额外的HTTP请求获取引入的样式片段)
+@import './common.scss';
+
+// 混合
+@mixin border-radius($x){
+         border-radius: $x;
+      -ms-border-radius: $x;
+     -moz-border-radius: $x;
+  -webkit-border-radius: $x;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    @include border-radius(50px);
+}
+
+// 继承
+%message-common{
+    width: 500px;
+    height: 60px;
+    background: yellow;
+}
+.jc{
+    @extend %message-common
+}
+
+
+.content{
+    width: 100%;
+}
+
+article[role="main"]{
+    background: yellow;
+    float: left;
+    height: 50px;
+    width: 600px / 900px * 100%;
+}
+aside[role="com"]{
+    background: green;
+    float: left;
+    height: 50px;
+    width: 300px / 900px * 100%;
+}

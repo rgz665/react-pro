@@ -1,0 +1,30 @@
+export default {
+    routes: [
+        {   
+            key:"/home",
+            title:"首页",
+            component:"Home"
+        },{   
+            key:"/hook",
+            title:"Hook",
+            component:"Hook"
+        },
+        {
+            key:"/my",
+            title:"我的",
+            component:"My"
+        },{
+            key:"/order",
+            title:"订单",
+            component:"Order"
+        },{
+            key:"/style",
+            title:"样式",
+            component:"Style"
+        },{
+            key:"/404",
+            title:"404",
+            component:"Error"
+        }
+    ]
+}
